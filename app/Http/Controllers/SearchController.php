@@ -35,16 +35,17 @@ class SearchController extends Controller
     $i = 0;
     $launch_details = array();
     foreach($launch_array as $launch){
-      ${'launch_detail' .$i} = array(
-        'launch_date' => $launch['launch_date_local'],
+      ${'launch_detail' . $i} = array(
+        'launch_date_local' => $launch['launch_date_local'],
         'rocket_name' => $launch['rocket']['rocket_name'],
         'long_launch_site_name' => $launch['launch_site']['site_name_long'],
         'details' => $launch['details'],
       );
       $launch_details[] = ${'launch_detail' .$i};
       $i++;
+
     }
-    dd($launch_details);
+    //dd($launch_details);
     return view('display')->with('launch_details', $launch_details);
   }
 }

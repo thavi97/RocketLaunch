@@ -11,9 +11,12 @@
 
     </head>
     <body>
-      {{$launch_details['0["launch_date_local"]']}}<br>
-      {{$launch_details['0["rocket_name"]']}}<br>
-      {{$launch_details['0["long_launch_site_name"]']}}<br>
-      {{$launch_details['0["details"]']}}<br>
+      @foreach($launch_details as $detail)
+      {{$detail['launch_date_local']}}<br>
+      {{$detail['rocket_name']}}<br>
+      {{$detail['long_launch_site_name']}}<br>
+      {{$detail['details']}}<br>
+      <br><br>
+      @endforeach
     </body>
 </html>
