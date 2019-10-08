@@ -11,20 +11,9 @@
 
     </head>
     <body>
-    <div>
-      {{$launch_details['launch_date']}}
-    </div>
-    <br>
-    <div>
-      {{$launch_details['rocket_name']}}
-    </div>
-    <br>
-    <div>
-      {{$launch_details['long_launch_site_name']}}
-    </div>
-    <br>
-    <div>
-      {{$launch_details['details']}}
-    </div>
+      {{$launch_details['0["launch_date_local"]']}}<br>
+      {{$launch_details['0["rocket_name"]']}}<br>
+      {{$launch_details['0["long_launch_site_name"]']}}<br>
+      {{$launch_details['0["details"]']}}<br>
     </body>
 </html>

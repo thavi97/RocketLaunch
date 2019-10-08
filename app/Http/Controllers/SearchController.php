@@ -32,13 +32,19 @@ class SearchController extends Controller
     $url = 'https://api.spacexdata.com/v2/launches?launch_year=' . $request->input('launch_year') . "&rocket_id=" . $request->input('rocket_id');
     $url_json = file_get_contents($url);
     $launch_array = json_decode($url_json, true);
-    $launch_details = array(
-      'launch_date' => $launch_array['0']['launch_date_local'],
-      'rocket_name' => $launch_array['0']['rocket']['rocket_name'],
-      'long_launch_site_name' => $launch_array['0']['launch_site']['site_name_long'],
-      'details' => $launch_array['0']['details'],
-    );
-
+    $i = 0;
+    $launch_details = array();
+    foreach($launch_array as $launch){
+      ${'launch_detail' .$i} = array(
+        'launch_date' => $launch['launch_date_local'],
+        'rocket_name' => $launch['rocket']['rocket_name'],
+        'long_launch_site_name' => $launch['launch_site']['site_name_long'],
+        'details' => $launch['details'],
+      );
+      $launch_details[] = ${'launch_detail' .$i};
+      $i++;
+    }
+    dd($launch_details);
     return view('display')->with('launch_details', $launch_details);
   }
 }
