@@ -14,6 +14,12 @@
       Hello!
     {!! Form::open(array('route' => 'home.store', 'enctype' => 'multipart/form-data')) !!}
       <input type="text" name="launch_year">
+      <select name="rocket_id">
+        <option value="falcon1">Falcon 1</option>
+        <option value="falcon9">Falcon 9</option>
+        <option value="falconheavy">Falcon Heavy</option>
+        <option value="starship">Starship</option>
+      </select>
       <button type="submit">Submit</button>
     {!! Form::close() !!}
     </body>

@@ -29,10 +29,16 @@ class SearchController extends Controller
   */
   public function store(Request $request)
   {
-    $url = 'https://api.spacexdata.com/v2/launches?launch_year=' . $request->input('launch_year');
+    $url = 'https://api.spacexdata.com/v2/launches?launch_year=' . $request->input('launch_year') . "&rocket_id=" . $request->input('rocket_id');
     $url_json = file_get_contents($url);
     $launch_array = json_decode($url_json, true);
-    $launch_date = $launch_array['0']['launch_date_local'];
-    return view('display')->with('launch_date', $launch_date);
+    $launch_details = array(
+      'launch_date' => $launch_array['0']['launch_date_local'],
+      'rocket_name' => $launch_array['0']['rocket']['rocket_name'],
+      'long_launch_site_name' => $launch_array['0']['launch_site']['site_name_long'],
+      'details' => $launch_array['0']['details'],
+    );
+
+    return view('display')->with('launch_details', $launch_details);
   }
 }

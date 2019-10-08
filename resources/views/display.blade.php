@@ -11,6 +11,20 @@
 
     </head>
     <body>
-      {{$launch_date}}
+    <div>
+      {{$launch_details['launch_date']}}
+    </div>
+    <br>
+    <div>
+      {{$launch_details['rocket_name']}}
+    </div>
+    <br>
+    <div>
+      {{$launch_details['long_launch_site_name']}}
+    </div>
+    <br>
+    <div>
+      {{$launch_details['details']}}
+    </div>
     </body>
 </html>
