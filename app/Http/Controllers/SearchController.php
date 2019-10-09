@@ -33,8 +33,8 @@ class SearchController extends Controller
     $url_json = file_get_contents($url);
     file_put_contents('logs/request_log'.round(microtime(true)*1000).'.txt', print_r($http_response_header, true));
     $launch_array = json_decode($url_json, true);
-    $i = 0;
     $launch_details = array();
+    $i = 0;
     foreach($launch_array as $launch){
       ${'launch_detail' . $i} = array(
         'launch_date_local' => $launch['launch_date_local'],
