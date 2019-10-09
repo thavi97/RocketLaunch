@@ -1,0 +1,23 @@
+Array
+(
+    [0] => HTTP/1.1 200 OK
+    [1] => Date: Wed, 09 Oct 2019 11:11:34 GMT
+    [2] => Content-Type: application/json; charset=utf-8
+    [3] => Connection: close
+    [4] => Set-Cookie: __cfduid=d3b7dc095a2f9614f56c1e3c7bc0fd2c61570619494; expires=Thu, 08-Oct-20 11:11:34 GMT; path=/; domain=.spacexdata.com; HttpOnly; Secure
+    [5] => X-DNS-Prefetch-Control: off
+    [6] => X-Frame-Options: SAMEORIGIN
+    [7] => Strict-Transport-Security: max-age=15552000; includeSubDomains
+    [8] => X-Download-Options: noopen
+    [9] => X-Content-Type-Options: nosniff
+    [10] => X-XSS-Protection: 1; mode=block
+    [11] => Vary: Origin
+    [12] => Access-Control-Allow-Origin: *
+    [13] => Access-Control-Expose-Headers: spacex-api-cache,spacex-api-count,spacex-api-response-time
+    [14] => spacex-api-cache: HIT
+    [15] => spacex-api-response-time: 24ms
+    [16] => CF-Cache-Status: DYNAMIC
+    [17] => Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+    [18] => Server: cloudflare
+    [19] => CF-RAY: 522fea1e6b4fe59b-MAN
+)
